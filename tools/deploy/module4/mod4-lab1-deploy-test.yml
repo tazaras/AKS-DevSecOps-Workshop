@@ -67,8 +67,8 @@ jobs:
           echo "TEST_CLUSTER_NAME: ${{ env.TEST_CLUSTER_NAME }}"
         uses: azure/aks-set-context@v3
         with:
-          resource-group: ${{ env.TEST_RESOURCE_GROUP }}
-          cluster-name: ${{ env.TEST_CLUSTER_NAME }}
+          resource-group: '${{ env.TEST_RESOURCE_GROUP }}'
+          cluster-name: '${{ env.TEST_CLUSTER_NAME }}'
           admin: 'true'
           use-kubelogin: 'true'
       # Deploys application based on given manifest file
