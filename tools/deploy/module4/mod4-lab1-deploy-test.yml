@@ -62,6 +62,9 @@ jobs:
           kubelogin-version: 'v0.0.25'
       # Retrieves your Azure Kubernetes Service cluster's kubeconfig file
       - name: Get K8s context
+       run: |
+          echo "TEST_RESOURCE_GROUP: ${{ env.TEST_RESOURCE_GROUP }}";
+          echo "TEST_CLUSTER_NAME: ${{ env.TEST_CLUSTER_NAME }}"
         uses: azure/aks-set-context@v3
         with:
           resource-group: ${{ env.TEST_RESOURCE_GROUP }}
