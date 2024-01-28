@@ -8,7 +8,8 @@ on:
 
 env:
   TEST_AZURE_CONTAINER_REGISTRY: ${{ vars.TEST_AZURE_CONTAINER_REGISTRY }}
-  TEST_RESOURCE_GROUP: ${{ vars.TEST_RESOURCE_GROUP }}
+  #TEST_RESOURCE_GROUP: ${{ vars.TEST_RESOURCE_GROUP }}
+  TEST_RESOURCE_GROUP: rg-komateja-az-asse-sbx-001
   TEST_CLUSTER_NAME: ${{ vars.TEST_CLUSTER_NAME }}
   TEST_DEPLOYMENT_MANIFEST_PATH: ${{ vars.TEST_DEPLOYMENT_MANIFEST_PATH }}
 
@@ -27,8 +28,7 @@ jobs:
       - name: Echo variables
         run: |
           echo "TEST_AZURE_CONTAINER_REGISTRY: ${{ env.TEST_AZURE_CONTAINER_REGISTRY }}"; 
-          #echo "TEST_RESOURCE_GROUP: ${{ env.TEST_RESOURCE_GROUP }}";
-          echo "TEST_RESOURCE_GROUP: rg-komateja-az-asse-sbx-001";
+          echo "TEST_RESOURCE_GROUP: ${{ env.TEST_RESOURCE_GROUP }}";
           echo "TEST_CLUSTER_NAME: ${{ env.TEST_CLUSTER_NAME }}";
           echo "TEST_DEPLOYMENT_MANIFEST_PATH: ${{ env.TEST_DEPLOYMENT_MANIFEST_PATH }}"
       # Checks out the repository this file is in
